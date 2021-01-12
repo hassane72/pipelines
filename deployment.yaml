@@ -23,18 +23,18 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nicad-frontend
+      app: productivity-frontend
   template:
     metadata:
       labels:
-        app: nicad-frontend
+        app: productivity-frontend
     spec:
       imagePullSecrets:
         - name: docker-registry-pipeline
       restartPolicy: Always
       containers:
-        - name: nicad-frontend
-          image: yrosman/nicad-frontend:prod-v1
+        - name: productivity-frontend
+          image: yrosman/productivity-frontend:prod-v1
           imagePullPolicy: Always
           ports:
             - name: front-http8766
