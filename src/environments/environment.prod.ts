@@ -13,7 +13,7 @@ export const environment = {
       baseURL: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty'
     },
     firestore: {
-      baseURL :
+      baseURL:
         'https://firestore.googleapis.com/v1/projects/ngh-awesome-list/databases/(default)/documents'
     }
   }
