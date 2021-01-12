@@ -1,7 +1,7 @@
 stages:
   - name: Build
     when:
-      branch: master
+      branch: main
       event: [ push, pull_request ]
     steps:
       - runScriptConfig:
