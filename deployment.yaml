@@ -1,0 +1,41 @@
+#kind: Service
+#apiVersion: v1
+#metadata:
+#  name: nicad-frontend-service
+#  namespace: version1
+#spec:
+#  selector:
+#    app: nicad-frontend
+#  type: LoadBalancer
+#  ports:
+#    - protocol: TCP
+#      port: 8760
+#      targetPort: 80
+#---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nicad-frontend
+  namespace: version1
+  labels:
+    app: nicad-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nicad-frontend
+  template:
+    metadata:
+      labels:
+        app: nicad-frontend
+    spec:
+      imagePullSecrets:
+        - name: docker-registry-pipeline
+      restartPolicy: Always
+      containers:
+        - name: nicad-frontend
+          image: yrosman/nicad-frontend:prod-v1
+          imagePullPolicy: Always
+          ports:
+            - name: front-http8766
+              containerPort: 80

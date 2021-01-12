@@ -1,0 +1,22 @@
+<fieldset>
+  <legend>Notes</legend>
+  <div class="form-group">
+    <label for="notes">
+      Un petit espace pour noter des idées, le ressenti de la journée, etc.
+    </label>
+    <textarea
+      [formControl]="notes"
+      class="form-control"
+      id="notes"
+      rows="3">
+  </textarea>
+    <small
+      *ngIf="notes.errors && notes.dirty"
+      class="form-text text-muted"
+    >
+    <span [hidden]="!notes.errors.maxlength">
+       Ce champ doit faire moins de 1000 caractères.
+      </span>
+    </small>
+  </div>
+</fieldset>

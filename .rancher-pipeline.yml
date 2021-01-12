@@ -1,0 +1,27 @@
+stages:
+  - name: Build
+    when:
+      branch: master
+      event: [ push, pull_request ]
+    steps:
+      - runScriptConfig:
+          image: node:current-alpine3.12
+          shellScript: nodejs --version && npm --version
+  - name: Build and Publish Image
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./Dockerfile
+          buildContext: .
+          tag: yrosman/nicad-frontend:prod-v1
+          pushRemote: true
+          registry: index.docker.io
+          imagePushSecretName: docker-registry-pipeline
+        env:
+          PLUGIN_INSECURE: "true"
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: ./deployment.yaml
+branch:
+  include: [ master ]
+  exclude: [ develop ]
