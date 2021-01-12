@@ -12,7 +12,7 @@ stages:
       - publishImageConfig:
           dockerfilePath: ./Dockerfile
           buildContext: .
-          tag: yrosman/productivity-frontend:prod-v1
+          tag: hassane72/productivity-frontend:prod-v1
           pushRemote: true
           registry: index.docker.io
           imagePushSecretName: docker-registry-pipeline

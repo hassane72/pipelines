@@ -15,10 +15,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nicad-frontend
+  name: productivity-frontend
   namespace: version1
   labels:
-    app: nicad-frontend
+    app: productivity-frontend
 spec:
   replicas: 1
   selector:
@@ -34,7 +34,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: productivity-frontend
-          image: yrosman/productivity-frontend:prod-v1
+          image: hassane72/productivity-frontend:prod-v1
           imagePullPolicy: Always
           ports:
             - name: front-http8766
