@@ -4,7 +4,7 @@ pipeline {
     tools {
         nodejs "node1450"
     }
-//
+///
 
     stages {
         stage('Get node and npm version') {
