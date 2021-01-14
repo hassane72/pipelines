@@ -10,5 +10,5 @@ RUN npm run build-prod
 # Stage 2
 FROM nginx:stable-alpine
 
-COPY --from=node /usr/src/app/dist/productivity-frontend /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/awesome-list /usr/share/nginx/html
 COPY ./proxy.conf /etc/nginx/conf.d/default.conf
