@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "node1551"
+        nodejs "node1450"
     }
 
 
