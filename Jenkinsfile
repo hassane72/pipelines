@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Push latest image to the Hub Docker') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-modelis-login', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-login', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
                     sh "docker push ${MAINTAINER}/${DOCKER_IMAGE_NAME}:prod-latest"
                 }
@@ -46,7 +46,7 @@ pipeline {
         }
         stage("Push current image to the Hub Docker") {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-modelis-login', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-login', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
                     sh "docker push ${MAINTAINER}/${DOCKER_IMAGE_NAME}:${BUILD_TAG}"
                 }
