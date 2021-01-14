@@ -11,7 +11,7 @@ pipeline {
             parallel {
                 stage('Check NODE') {
                     steps {
-                        sh "nodejs --version"
+                        sh "node --version"
                     }
                 }
                 stage('Check NPM') {
