@@ -12,7 +12,7 @@ stages:
       - publishImageConfig:
           dockerfilePath: ./Dockerfile
           buildContext: .
-          tag: hassane72/productivity-frontend:prod-v1
+          tag: modelisgroup/productivity-frontend:prod-v1
           pushRemote: true
           registry: index.docker.io
           imagePushSecretName: docker-registry-pipeline
@@ -23,5 +23,5 @@ stages:
       - applyYamlConfig:
           path: ./deployment.yaml
 branch:
-  include: [ main ]
+  include: [ main, master ]
   exclude: [ develop ]
