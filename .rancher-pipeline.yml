@@ -2,9 +2,9 @@
 #Stages lists
 stages:
   - name: Build
-    when:
-      branch: main
-      event: [ push, pull_request ]
+    #when:
+      #branch: main
+      #event: [ push, pull_request ]
     steps:
       - runScriptConfig:
           image: node:current-alpine3.12
