@@ -25,5 +25,5 @@ stages:
       - applyYamlConfig:
           path: ./deployment.yaml
 branch:
-  include: [ main, master ]
+  include: [ main ]
   exclude: [ develop ]
