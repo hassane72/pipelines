@@ -1,5 +1,5 @@
 
-#Stages
+#Stages lists
 stages:
   - name: Build
     when:
