@@ -34,7 +34,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: productivity-frontend
-          image: hassane72/productivity-frontend:prod-v1
+          image: modelisgroup/productivity-frontend:prod-v1
           imagePullPolicy: Always
           ports:
             - name: front-http8766
