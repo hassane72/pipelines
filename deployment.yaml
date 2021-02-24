@@ -39,3 +39,4 @@ spec:
           ports:
             - name: front-http8766
               containerPort: 80
+              hostPort: 8083
