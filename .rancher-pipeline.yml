@@ -1,29 +1,27 @@
-
-#Stages lists
 stages:
-  - name: Build
-    #when:
-      #branch: main
-      #event: [ push, pull_request ]
-    steps:
-      - runScriptConfig:
-          image: node:current-alpine3.12
-          shellScript: nodejs --version && npm --version
-  - name: Build and Publish Image
-    steps:
-      - publishImageConfig:
-          dockerfilePath: ./Dockerfile
-          buildContext: .
-          tag: modelisgroup/productivity-frontend:prod-v1
-          pushRemote: true
-          registry: index.docker.io
-          imagePushSecretName: docker-registry-pipeline
-        env:
-          PLUGIN_INSECURE: "true"
-  - name: Deploy
-    steps:
-      - applyYamlConfig:
-          path: ./deployment.yaml
+- name: Build
+  steps:
+  - runScriptConfig:
+      image: node:current-alpine3.12
+      shellScript: nodejs --version && npm --version
+- name: Build and Publish Image
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: modelisgroup/productivity-frontend:prod-v1
+      pushRemote: true
+      registry: index.docker.io
+    env:
+      PLUGIN_INSECURE: "true"
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+timeout: 1
 branch:
-  include: [ main ]
-  exclude: [ develop ]
+  include:
+  - main
+  exclude:
+  - develop
+notification: {}
