@@ -38,5 +38,5 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: front-http8766
-              containerPort: 80
+              containerPort: 8790
               hostPort: 8083
