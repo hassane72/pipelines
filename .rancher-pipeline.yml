@@ -18,10 +18,8 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
-timeout: 1
 branch:
   include:
   - main
   exclude:
   - develop
-notification: {}
