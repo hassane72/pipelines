@@ -4,22 +4,6 @@ stages:
   - runScriptConfig:
       image: node:current-alpine3.12
       shellScript: nodejs --version && npm --version
-    when:
-      branch:
-        include:
-        - main
-      event:
-        include:
-        - pull_request
-        - push
-  when:
-    branch:
-      include:
-      - main
-    event:
-      include:
-      - push
-      - pull_request
 - name: Build and Publish Image
   steps:
   - publishImageConfig:
