@@ -30,7 +30,7 @@ spec:
         app: productivity-frontend
     spec:
       imagePullSecrets:
-        - name: dc-6zpvk
+        - name: docker-registry
       restartPolicy: Always
       containers:
         - name: productivity-frontend
