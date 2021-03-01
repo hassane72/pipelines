@@ -30,11 +30,11 @@ spec:
         app: productivity-frontend
     spec:
       imagePullSecrets:
-        - name: docker-registry-pipeline
+        - name: dc-6zpvk
       restartPolicy: Always
       containers:
         - name: productivity-frontend
-          image: modelisgroup/productivity-frontend:prod-v1
+          image: hassane72/productivity-frontend:prod-v1
           imagePullPolicy: Always
           ports:
             - name: front-http8766
