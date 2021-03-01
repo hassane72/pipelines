@@ -30,7 +30,7 @@ spec:
         app: productivity-frontend
     spec:
       imagePullSecrets:
-        - name: docker-registry
+        - name: registry-docker-hub
       restartPolicy: Always
       containers:
         - name: productivity-frontend
