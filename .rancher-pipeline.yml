@@ -9,7 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: modelisgroup/productivity-frontend:prod-v1
+      tag: hassane72/productivity-frontend:prod-v1
       pushRemote: true
       registry: index.docker.io
     env:
