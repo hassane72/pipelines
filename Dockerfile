@@ -7,7 +7,7 @@ RUN npm install
 COPY . .
 RUN npm run build-prod
 
-# Stage 2
+# Stage 2 n
 FROM nginx:stable-alpine
 
 COPY --from=node /usr/src/app/dist/awesome-list /usr/share/nginx/html
