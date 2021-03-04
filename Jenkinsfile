@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Get node and npm version') {
             parallel {
-                stage('Check NODE') {
+                stage('Check NODE Version') {
                     steps {
                         sh "node --version"
                     }
